@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id = "result"></div>
+    <script>
+        var numbers = {}; //숫자 객체
+        numbers.all = []; //최대값까지의 숫자 배열
+        numbers.prime = []; //소수 배열
+
+        //숫자가 소수인지 판별
+        numbers.isPrime = function(number){
+            for(i = 2; i < number; i++){
+                if(number % i === 0 ){
+                    return false;
+                }
+            }
+            return true;
+        };
+        
+        //최대값까지의 숫자를 all 배열에 넣기
+        numbers.addAll = function (max_num) {
+            for(i = 2; i < max_num; i++){
+                this.all.push(i)
+            };
+        };
+
+
+        // 판별된 prime 배열에 넣기
+        numbers.getAllPrimes = function() {
+            for (var i = 0; i < this.all.length; i++) {
+                var n = this.all[i];
+                if (this.isPrime(n)){
+                    this.prime.push(n)
+                }
+            }
+        };
+
+        //prime 출력
+        numbers.writePrime = function(){
+            var ret = "";
+            for (var i = 0; i < this.prime.length; i++){
+                ret += "<li>" + this.prime[i] + "</li>\n"
+            }
+            return ret;
+        };
+        
+        numbers.addAll(100);
+        numbers.getAllPrimes();
+        document.getElementById('result').innerHTML = numbers.writePrime();
+
+
+    </script>
+</body>
+</html>

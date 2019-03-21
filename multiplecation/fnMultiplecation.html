@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>함수로 구구단 구현</title>
+</head>
+<body>
+    <script>
+        //계산 후 배열 저장
+        function saveCalculrate(num) {
+            var results = [];
+            for (i = 1; i <= 9; i++){
+                results[i] = num * i;
+            }
+            return results;
+        }
+
+        //화면 구현
+        function print(num, results) {
+            document.write("<h2>" + num + "단" + "</h2>")
+            for(var i = 1; i <= 9; i++){
+                document.write(results[i] + "<br>")
+            }
+        } 
+
+        //전역 함수
+        function main() {
+            for(var n = 2; n <=9; n++){
+                var result = saveCalculrate(n)
+                print(n, result);
+            }
+        }
+
+
+        //메인 실행
+        main();
+    
+    </script>
+</body>
+</html>
+
+
+<!--
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>함수로 구구단 출력</title>
+</head>
+<body>
+    <h1>함수 사용</h1>
+    <script>
+        function gugudan(x) {
+            var ret = [];
+            for(var i = 1; i < 10; i++){
+                ret[i] = x * i;
+            }
+            return ret;
+        }
+
+        function printResult(x, ret) {
+            document.write("<h2>" + x + "단" +"</h2>");
+            for(var i = 1; i<10; i++){
+                var y = x * i;
+                document.write(x + "*" + i + " = " + y + "<br>");
+            }
+        }
+
+        function main() {
+            for (var n = 2; n < 10; n++){
+                var result = gugudan(n);
+                printResult(n, result);
+            }    
+        }
+        main();
+        
+    </script>
+</body>
+</html>
+-->

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>구구단</h1>
+    <input type="text" id="inputText" >
+    <button type="button" onclick="main()">처리</button>
+    
+    <!--자바스크립트-->
+    <script>
+    //객체 생성
+    gugudan = {};
+
+    //배열 생성
+    gugudan.numbers = [];
+    gugudan.results = [];
+
+    //input 받기
+
+    gugudan.convertSave = function(){
+        var str = document.getElementById("inputText").value;
+        var splitStr = str.split(',');
+        var n1 = Number(splitStr[0]);
+        var n2 = Number(splitStr[1]);
+        this.numbers[0] = n1;
+        this.numbers[1] = n2;
+    }
+
+    //계산
+
+    gugudan.calculrate = function(){
+        var n1 = this.numbers[0];
+        var n2 = this.numbers[1];
+        for(var n = 2; n < 10; n++){
+            for(var i = 0; i < 9; i++){
+                this.results.push(n * (i+1));
+                if(n === n1 && (i+1) === n2){
+                return;
+                }
+            }
+        }
+    }
+    
+
+    //print
+    gugudan.print = function(){
+        for(var i = 0; i < this.results.length; i++){
+            document.write(this.results[i] + "<br>");
+        }
+    }   
+    
+    //main
+    function main(){
+        gugudan.convertSave();
+        gugudan.calculrate();
+        gugudan.print();
+    }
+
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>입력 숫자의 합, 개수</title>
+</head>
+<body>
+    <script>
+        var sum = 0;
+        var count= 0;
+        while (n != 0) {
+            var s = prompt("Input Number");
+            var n = Number(s);
+            sum = sum + n;
+            console.log("합: " + sum);
+            console.log("개수: " + count);
+            count++;
+        }
+    </script>
+</body>
+</html>
+
+<!--
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>답안</title>
+</head>
+<body>
+    <script>
+        var sum = 0;
+        var n = -1;
+        var count = -1;
+        while (n != 0) {
+            n = Number(prompt("숫자를 입력 (0 = 종료)"));
+            sum += n;
+            count++;
+            console.log(count, n, sum);
+        }
+        document.write("입력한" + count + "수의 합은" + sum);
+    </script>
+</body>
+</html>
+-->

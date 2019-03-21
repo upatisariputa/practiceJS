@@ -1,0 +1,94 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>객체, 함수로 구구단 구현</title>
+</head>
+<body>
+    <script>
+        //객체 생성
+        gugudan = {};
+
+        //계산 후 배열 저장
+        gugudan.saveCalculrate = 
+            function(num) {
+                var results = [];
+                for (i = 1; i <= 9; i++){
+                    results[i] = num * i;
+                }
+                return results;
+            },
+
+        //화면 구현
+        gugudan.print =
+            function(num, results) {
+                document.write("<h2>" + num + "단" + "</h2>")
+                for(var i = 1; i <= 9; i++){
+                    document.write(results[i] + "<br>")
+                }
+            }, 
+
+        //전역 함수
+        gugudan.main =
+            function(){
+                for(var n = 2; n <=9; n++){
+                    var result = this.saveCalculrate(n)
+                    this.print(n, result);
+                }
+        }
+
+
+        //메인 실행
+        gugudan.main();
+    
+    </script>
+</body>
+</html>
+
+<!-- 정답 
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>객체, 함수로 구구단 구현</title>
+</head>
+<body>
+    <h1>구구단 완결</h1>
+    <script>
+        gugudan = {};
+        gugudan.result = [];
+        gugudan.current = -1;
+        gugudan.calculrate = function(n){
+            this.current = n;
+            for(var i = 0; i < 9; i++){
+                this.result[i] = n * (i + 1);
+            }
+        }
+        gugudan.print = function() {
+            document.write("<h2>" + this.current + "단</h2>");
+            for (var i = 0; i < 9; i++){
+                var x = this.current;
+                var t = i + 1;
+                var y = this.result[i];
+                document.write(x + " * " + t + " = " + y + "<br>");
+            }
+        }
+
+        function main() {
+            for (var i = 2; i < 10; i++){
+                gugudan.calculrate(i);
+                gugudan.print();
+            }
+        }
+
+        main();
+    </script>
+</body>
+</html>
+
+-->

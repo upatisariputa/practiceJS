@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>구구단 구현</title>
+</head>
+<body>
+    <h1>구구단 구현</h1>
+    <script>
+        //객체 생성
+        gugudan = {};
+        gugudan.results = [];
+        gugudan.current = -1;
+
+        //구국단 계산
+        gugudan.calculrate = function(n){
+            this.current = n;
+            for(var i = 0; i < 9; i++){
+                this.results[i] = n * (i + 1);
+            }
+        }
+
+        //구구단 표출
+        gugudan.print = function(){
+            document.write(this.current + "단" + "<br>" + "<br>");
+            for(var i  = 0; i < 9; i++){
+                document.write(this.results[i] + "<br>");
+            }
+        }
+
+        //main 함수
+
+        function main() {
+            for(var i = 2; i < 10; i++){
+                gugudan.calculrate(i);
+                gugudan.print();
+            }
+        }
+
+        main();
+        
+        
+    </script>
+</body>
+</html>
